@@ -1,0 +1,25 @@
+<title>sᴍᴀʟʟ ᴄᴀᴘs</title>
+
+<textarea placeholder="Regular Text" id="text" oninput="document.getElementById('ptext').value = CAPSencrypt(document.getElementById('text').value);"></textarea><br>
+
+<textarea placeholder="sᴍᴀʟʟ ᴄᴀᴘs" id="ptext" readonly></textarea>
+
+<script>
+    document.getElementById('ptext').value = CAPSencrypt(document.getElementById('text').value);
+    function CAPSencrypt(text) {
+        return text.replace(/[a-z]/g, c => 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ'[c.charCodeAt(0) - 97] || c);;
+    }
+</script>
+
+<style>
+    textarea {
+        resize: none;
+        width: 100%;
+        height: 50%;
+    }
+
+    button {
+        width: 50%;
+        height: 7%;
+    }
+</style>
